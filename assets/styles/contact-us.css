@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Righteous&display=swap');
+
+:root {
+  /* colors: */
+  --clr-primary: #FF725E;
+  --clr-neutral: #F2F7F2;
+  --clr-accent: #2A324B;
+
+/* font-weight: */
+  --fw-bold: 600;
+  --fw-thin: 400;
+
+  /* font-family: */
+  --ff-header: 'Righteous', cursive;
+  --ff-base: 'Montserrat', sans-serif;
+
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+  scroll-behavior:smooth;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+/* general styling */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+
+  background: var(--clr-neutral);
+
+  font-size: .875rem;
+  font-family: var(--ff-base);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+
+
+/* container styling */
+.container {
+  display: grid;
+
+  margin-bottom: 2em;
+  text-align: center;
+
+  --padding-header: .5em 1em 0em 1em;
+  --padding-button: .75em 2em;
+  --margin-paragraph: 1em 2em;
+  --margin-image: .5em 1em 0.5em 1em;
+}
+
+/*even columns styling */
+
+.even-column {
+  color: var(--clr-accent);
+}
+
+.even-columns.bg-primary{
+  background: var(--clr-primary);
+  color: var(--clr-neutral);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 10px 7px -3px;
+}
+
+/* heading and paragraph styling */
+.fs-primary-heading.fw-bold {
+  font-size: 1.8rem;
+  padding: var(--padding-header);
+}
+
+.fs-secondary-heading.fw-bold {
+  font-size: 1.5rem;
+}
+
+.container p{
+  margin: var(--margin-paragraph);
+}
+
+/* logo and primary header styling */
+.primary-logo{
+  font-family: var(--ff-header);
+  font-weight: var(--fw-bold);
+  font-size: 3rem;
+
+  color: var(--clr-accent);
+}
+
+/* styling map */
+.even-columns__map {
+  display: grid;
+  padding: .5em;
+  max-width: 2000px;
+
+  background: var(--clr-primary);
+  color: var(--clr-neutral);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 10px 7px -3px;
+}
+  iframe {
+    min-width: 100%;
+    border-radius: 15px;
+
+    border: none;
+  }
+
+/* img styling */
+picture img {
+  margin: var(--margin-image);
+}
+
+/* styling  down arrow */
+
+.fa-solid.fa-arrow-down-long {
+  font-size: 1.5rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: var(--clr-neutral);
+}
+
+.fa-solid.fa-arrow-down-long:hover {
+  color: var(--clr-accent);
+}
+
+/* footer styling */
+
+.footer-nav {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 0px 5em; 
+  grid-template-areas: 
+    "footer__socialmedia-links footer__contact"
+    "footer__copyright footer__copyright"; 
+  justify-items:center; 
+  align-items: center;
+}
+.footer__copyright { 
+  text-align: center;
+  grid-area: footer__copyright; 
+}
+
+.footer__contact a{
+  color: var(--clr-primary);
+}
+
+.fs-tertiary-heading.fw-bold {
+  margin-left: 2em;
+}
+
+.footer-mini-header {
+  font-family: var(--ff-header);
+  color: var(--clr-primary);
+}
+
+/* styling img and i in list */
+.socialmedia-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+
+}
+
+.socialmedia-links i{
+  font-size: 2rem;
+  color: var(--clr-primary);
+}
+
+/* styling address, phone numbers and mail */
+
+address {
+  margin: var(--margin-paragraph);
+}
+
+.contact__phone a{
+  text-decoration: none;
+  color: var(--clr-primary);
+}
+
+.contact__email a{
+  text-decoration: none;
+  color: var(--clr-primary);
+}
+.contact__phone a:hover {
+  color: var(--clr-accent);
+}
+.contact__email a:hover {
+  color: var(--clr-accent);
+}
+
+
+/* styling whatsapp button */
+.wp {
+  display: grid;
+  position:fixed;
+	width:2.5em;
+	height:2.5em;
+	bottom:35px;
+	right:20px;
+	background-color:#25d366;
+	border-radius:50%;
+  place-content: center;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.34) 0px 1px 2px;
+  z-index:999;
+}
+
+.wp i {
+  font-size:1.25rem;
+  color:var(--clr-neutral);
+}
+
+
+@media screen and (min-width: 40em) and (max-width: 64em) {
+
+  /* setting size of logo */
+  .primary-logo{
+    font-size: 4rem;
+  }
+
+  /* setting roots */
+  .container {  
+    --padding-header: .5em 2em 0em 2em;
+    --padding-button: .75em 2em;
+    --margin-paragraph: 1em 2.5em;
+    --margin-image: .5em 2.5em 0.5em 2.5em;
+  }
+
+  /* styling headers and p */
+  .fs-primary-heading.fw-bold {
+    font-size: 2rem;
+    padding: var(--padding-header);
+  }
+
+  .fs-secondary-heading.fw-bold {
+    font-size: 2rem;
+    padding: var(--padding-header);
+  }
+
+  .fs-tertiary-heading.fw-bold {
+    font-size: 1.65rem;
+  }
+
+  .container p{
+    font-size: 1.5rem;
+    margin: var(--margin-paragraph);
+  }
+
+  .footer__copyright p{
+    font-size: 1rem;
+  }
+
+  address {
+    font-size: 1.5rem;
+    margin: var(--margin-paragraph);
+  }
+
+  .contact__phone a{
+    font-size: 1.5rem;
+  }
+  
+  .contact__email a{
+    font-size: 1.5rem;
+  }
+
+  /* shopping brands logo and img styling */
+  picture img {
+    margin: var(--margin-image);
+  }
+}
+
+@media screen and (min-width: 65em) {
+
+  /* styling body part's bacground */
+  main{
+    background-image: url(/assets/img/Rhinoplasty-bro.svg), url(/assets/img/Lip\ filler-bro.svg);
+    background-size:contain, contain;
+    background-repeat:space;
+    background-position: top, bottom;
+  }
+
+  /* setting size of logo */
+  .primary-logo{
+    font-size: 4rem;
+    border-bottom: 2px solid var(--clr-accent);
+
+    margin-bottom: .5em;
+  }
+
+  /* setting roots */
+  .container {  
+    --padding-header: 2.5em 0em 0em 5em;
+    --padding-button: 1.5em 4em;
+    --margin-reverted-paragraph: .5em 0 .5em 5em;
+    --margin-flat-paragraph: 2em 3em 2em 0;
+    --margin-image: 2em 0em 2em 2.5em;
+    --margin-even-columns: 0 4em 0 4em;
+  }
+
+  /* setting columns position */
+  .even-columns {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". reverted-columns"; 
+
+      max-width: 2000px;
+
+    margin: var(--margin-even-columns);
+  }
+
+
+  .columns__reverted {
+    place-self: center;
+    grid-area: reverted-columns; 
+    grid-column:1;
+  }
+
+  .columns__flat {
+    padding-top: 8em;
+  }
+
+  /* styling first and last even-columns */
+  .even-columns.bg-primary {
+    border-top-right-radius: 12.5em;
+    border-bottom-right-radius: 56em;
+    border-top-left-radius: 56em;
+    border-bottom-left-radius: 12.5em;
+
+    overflow: hidden;
+  }
+
+  .even-columns__map {
+    max-width: 2000px;
+
+    margin: var(--margin-even-columns);
+
+    border-top-right-radius: 56em;
+    border-bottom-right-radius: 12.5em;
+    border-top-left-radius: 12.5em;
+    border-bottom-left-radius: 56em;
+    background: var(--clr-primary);
+    color: var(--clr-neutral);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 10px 7px -3px;
+  }
+
+  .even-columns__map iframe {
+    min-height: 500px;
+    border-top-right-radius: 56em;
+    border-bottom-right-radius: 12.5em;
+    border-top-left-radius: 12.5em;
+    border-bottom-left-radius: 56em;
+    padding: 2em;
+    border: none;
+  }
+
+  /* setting size and styling images and social media links */
+
+  picture img {
+    max-width: 70%;
+  }
+
+
+  .even-columns.bg-primary picture img {
+    border-left: 2px solid var(--clr-neutral);
+  }
+
+  .socialmedia-links i:hover{
+    color: var(--clr-accent);
+  }
+
+  /* setting size and position headers and paraghraph */
+  .columns__reverted p {
+    font-size: 1rem;
+
+    margin: var(--margin-reverted-paragraph);
+  }
+
+
+  .columns__flat p {
+    font-size: 1rem;
+
+    margin: var(--margin-flat-paragraph);
+  }
+
+  .fs-primary-heading.fw-bold {
+    font-size: 1.75rem;
+    padding: var(--padding-header);
+  }
+  .fs-secondary-heading.fw-bold {
+    font-size: 1.5rem;
+  }
+
+
+  /* styling footer */ 
+  .footer-nav {
+    gap: 0 65em; 
+    justify-items: center; 
+    align-items:flex-start; 
+  }
+
+/* styling whatsapp button */
+  .wp {
+    width: 3.75em;
+    height:3.75em;
+    bottom:35px;
+    right:20px;
+    border-radius:50%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.34) 0px 1px 2px;
+    z-index:999;
+  }
+  
+  .wp i {
+    font-size:1.75rem;
+    color:var(--clr-neutral);
+  }
+
+  .fa-solid.fa-arrow-down-long {
+display: none;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  /* setting size of logo */
+  .primary-logo{
+    font-size: 5rem;
+  }
+  
+  /* setting roots */
+  .container {  
+    --padding-primary-header: 1em 0 0em 4em;
+    --padding-header: 3em 2em 1em 3em;
+    --padding-button: 1.5em 4em;
+    --margin-reverted-paragraph: .5em 0 .5em 5em;
+    --margin-flat-paragraph: 2em 3em 2em 0;
+    --margin-image: 2em 0em 2em 2.5em;
+    --margin-even-columns: 0 4em 0 4em;
+}
+/* setting size and position headers and paraghraph */
+
+.columns__flat p {
+  margin: var(--margin-flat-paragraph);
+}
+
+.fs-primary-heading.fw-bold {
+  font-size: 2rem;
+  padding: var(--padding-primary-header);
+}
+
+.fs-secondary-heading.fw-bold {
+  font-size: 2rem;
+  padding: var(--padding-header);
+}
+
+.fs-tertiary-heading.fw-bold {
+  font-size: 1.75rem;
+}
+
+.container p{
+  font-size: 1.5rem;
+}
+
+.footer__copyright p{
+  font-size: 1.5rem;
+}
+
+address {
+  font-size: 1.5rem;
+  margin: var(--margin-paragraph);
+}
+
+.contact__phone a{
+  font-size: 1.5rem;
+}
+
+.contact__email a{
+  font-size: 1.5rem;
+}
+
+.socialmedia-links i{
+  font-size: 4rem;
+}
+
+
+/* styling footer */ 
+.footer-nav {
+  gap: 0 85em; 
+}
+
+.fa-solid.fa-arrow-down-long {
+  display: none;
+    }
+
+/* set size of second img */
+ .even-columns__img {
+  height: 900px;
+ }
+}
+
+
+
+
